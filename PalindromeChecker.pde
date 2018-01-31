@@ -16,14 +16,34 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String dog= new String();
+  String cat= new String();
+  for (int i=0; i<word.length(); i++){
+    if ((Character.isUpperCase(word.charAt(i))==true)){
+       cat=word.substring(i,i+1).toLowerCase();
+       dog=dog+cat;
+    }
+    else
+    dog=dog+word.substring(i,i+1);
+  }
+  word=dog;
+    String noPunc= new String();
+  for (int i=0; i<word.length(); i++){
+    if ((Character.isLetter(word.charAt(i))==true))
+    noPunc=noPunc+word.substring(i,i+1);
+  }
+word= noPunc;
+
+  if (reverse(word).equals(word))
+  return true;
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+  String rhino=new String();
+  int turtle=str.length()-1;
+ for (int i=0; i<str.length(); i++){
+   rhino=rhino+str.substring(turtle-i,turtle-i+1);
+ }
+ return rhino;
 }
-
-
